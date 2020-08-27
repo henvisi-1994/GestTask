@@ -1,0 +1,47 @@
+   <!-- Sidebar Menu -->
+   <nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <!-- Add icons to the links using the .nav-icon class
+           with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a routerLink="/admin/usuarios" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Usuarios
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/admin/grupos" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Grupos
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/admin/actividades" class="nav-link">
+              <i class="nav-icon fa fa-file-o"></i>
+              <p>
+                Actividades
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/admin/asigGrupos" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Asignacion de Grupos
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="cerrarSesion()">
+              <p>
+                Cerrar Sesion
+              </p>
+            </a>
+          </li>
+    </ul>
+  </nav>
+  <!-- /.sidebar-menu -->

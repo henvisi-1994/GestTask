@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">
+        <i class="ion ion-clipboard mr-1"></i>
+         Actividades
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <ul class="todo-list" data-widget="todo-list" *ngFor="let actividad of actividades">
+        <li>
+          <!-- drag handle -->
+          <span class="handle">
+            <i class="fa fa-ellipsis-v"></i>
+            <i class="fa fa-ellipsis-v"></i>
+          </span>
+          <!-- todo text -->
+          <span class="text">{{actividad.nom_act}}</span>
+          <!-- Emphasis label -->
+          <small class="badge badge-default"><i class="far fa-clock"></i>{{formato(actividad.fecha_act)}}</small>
+          <!-- General tools such as edit or delete-->
+          <div class="tools">
+            <i class="fa fa-trash-o"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

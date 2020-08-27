@@ -1,0 +1,40 @@
+<!-- Sidebar Menu -->
+<nav class="mt-2">
+  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <!-- Add icons to the links using the .nav-icon class
+         with font-awesome or any other icon font library -->
+    <li class="nav-item">
+      <a routerLink="/home/revisarAct" class="nav-link">
+        <i class="nav-icon ion ion-clipboard mr-1"></i>
+        <p>
+           Revisar Actividades
+        </p>
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="usuario.tipo_user === 'moderador'">
+      <a routerLink="/home/asigActividades" class="nav-link">
+        <i class="nav-icon fa fa-file-o"></i>
+        <p>
+          Asignación de Actividades
+        </p>
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="usuario.tipo_user === 'moderador'">
+      <a routerLink="/home/perfil" class="nav-link">
+        <i class="nav-icon fa fa-user-circle"></i>
+        <p>
+          Perfil
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="cerrarSesion()">
+        <i class="nav-icon fa fa-times-circle" aria-hidden="true"></i>
+        <p>
+          Cerrar Sesion
+        </p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- /.sidebar-menu -->

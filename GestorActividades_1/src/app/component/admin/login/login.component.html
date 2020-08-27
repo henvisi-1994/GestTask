@@ -1,0 +1,32 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <!-- Icon -->
+    <br>
+    <div class="fadeIn first">
+      <br>
+      <img src="../assets/img/logo_login.png"  width=131px  height= 100>
+      <br>
+      <br>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <label for="" class="form-control" style="border:0;"><strong>Email</strong></label>
+      <input type="text" style=" border-color: #044333;" id="login" class="fadeIn second" [(ngModel)]="usuario.email_user" name="login"
+        placeholder="Ingrese Correo Institucional">
+      <label for="" class="form-control" style="border:0;"><strong>Contraseña</strong></label>
+      <input type="password" style=" border-color: #044333;" id="password" class="fadeIn third" [(ngModel)]="usuario.contrasena_user" name="login"
+        placeholder="Ingrese contraseña">
+      <br><br><button type="input" class="btn btn-inicio-sesion" (click)="logear()"></button><br><br>
+    </form>
+    ¿No tiene una cuenta? <a class="underlineHover"routerLink="registro"> Cree una </a>
+    <br>
+    <br>
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="recuperarContrasena">¿Olvidaste contraseña?</a>
+    </div>
+
+  </div>
+</div>

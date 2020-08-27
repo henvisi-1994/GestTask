@@ -1,0 +1,80 @@
+<div class="container m-r-3">
+  <h1 align="center"><b>Usuarios</b></h1>
+  <input type="button" class="btn btn-primary mt-2 mb-2" value="Nuevo" (click)="open(usuarioModal)">
+    <ng-template #usuarioModal let-modal>
+      <div class="modal-header">
+        <h1>Usuarios</h1>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="form-group">
+            <label for="">Nombres</label>
+            <input type="text" name="nombres" id="" class="form-control" placeholder="Ingrese Nombres" [(ngModel)]="usuario.nombres_user">
+          </div>
+          <div class="form-group">
+            <label for="">Apellidos</label>
+            <input type="text" name="apellidos" id="" class="form-control" placeholder="Ingrese Apellidos" [(ngModel)]="usuario.apellidos_user">
+          </div>
+          <div class="form-group">
+            <label for="">Usuario GitHub</label>
+            <input type="text" name="user_git" id="" class="form-control" placeholder="Ingrese usuario de github" [(ngModel)]="usuario.user_git_user">
+          </div>
+          <div class="form-group">
+            <label for="">E-mail</label>
+            <input type="email" name="email" id="" class="form-control" placeholder="Ingrese E-mail" [(ngModel)]="usuario.email_user">
+          </div>
+          <div class="form-group">
+            <label for="">Celular</label>
+            <input type="text" name="celular" id="" class="form-control" placeholder="Ingrese su numero de celular" [(ngModel)]="usuario.celular_user">
+          </div>
+          <div class="form-group" *ngIf="edit == false">
+            <label for="">Contraseña</label>
+            <input type="password" name="password" id="" class="form-control" placeholder="Ingrese Contraseña" [(ngModel)]="usuario.contrasena_user">
+          </div>
+          <div class="form-group">
+            <label for="">Tipo</label>
+            <select class="form-control" name="tipo" id="" [(ngModel)]="usuario.tipo_user">
+              <option value="adminstrador">Administrador</option>
+              <option value="moderador"> Moderardor</option>
+              <option value="integrante">Integrante </option>
+            </select>
+          </div>
+          <input type="reset" class="btn btn-secondary mr-2" value="Limpiar">
+          <input type="submit" class="btn btn-primary"  (click)="guardarUsuario()">
+        </form>
+      </div>
+    </ng-template>
+
+  <table class="table  table-striped table-responsive">
+    <thead class="thead-dark">
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Git_user</th>
+        <th>E-mail</th>
+        <th>Celular</th>
+        <th>Opciones</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.nombres_user}}</td>
+          <td>{{ usuario.apellidos_user}}</td>
+          <td>{{ usuario.user_git_user}}</td>
+          <td>{{ usuario.email_user}}</td>
+          <td>{{ usuario.celular_user}}</td>
+          <td>
+             <!-- Envia datos de determinado producto desde arreglo a NgModel de producto -->
+             <button class="btn btn-warning" (click)="editUsuario(usuario)"><i
+              class="fa fa-edit"></i></button> &nbsp;
+          <!-- Elimina producto obteniendo id desde arreglo a NgModel de producto -->
+          <button class="btn btn-danger" (click)="borrarUsuario(usuario.id_user)"><i
+              class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
