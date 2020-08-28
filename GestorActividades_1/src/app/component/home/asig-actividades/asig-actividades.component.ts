@@ -14,6 +14,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./asig-actividades.component.css']
 })
 export class AsigActividadesComponent implements OnInit {
+  grupos: any;
+  vgrupo: boolean;
   constructor(private usuarioService: UsuariosService,
               private actividadServices: ActividadesService,
     // tslint:disable-next-line: variable-name
@@ -26,6 +28,7 @@ export class AsigActividadesComponent implements OnInit {
   actividades: any;
   // tslint:disable-next-line: variable-name
   id_user: number;
+  id_grupo: number;
   tamano: number;
   asignacion: boolean;
   cont: any = 0;
@@ -34,14 +37,47 @@ export class AsigActividadesComponent implements OnInit {
   asignaciones: any;
   grupo: any;
   ngOnInit(): void {
-    this.getUsuarioGrupo();
+    this.getgrupos();
+
+  }
+  verificarGrupos(grupos: any) {
+    if (grupos.length > 1) {
+      this.vgrupo = true;
+    } else {
+      this.vgrupo = false;
+    }
+    this.almacenar_grupos(grupos);
+  }
+  almacenar_grupos(grupos: any) {
+    if (this.vgrupo) {
+      this.grupos = grupos;
+    } else {
+      localStorage.setItem('grupo', grupos[0].id_grupo);
+      this.getUsuarios();
+      this.getActividades();
+      this.getAsignaciones();
+    }
+  }
+  public seleccionarGrupo(event: any){
+    localStorage.setItem('grupo', event);
     this.getUsuarios();
     this.getActividades();
     this.getAsignaciones();
   }
+  public getgrupos() {
+    this.usuarioService.getGrupoUsuario().subscribe(
+      (res: any) => {
+        this.grupos = res;
+        this.verificarGrupos(res);
+      },
+      err => {
+        this.toastr.error(err);
+      }
+    );
+  }
   moverActividades(actividadesO: any) {
     // Cargar Actividades
-    let myArray = actividadesO;
+    const myArray = actividadesO;
     // Cargar Usuarios
     const usuarios = this.usuarios;
     // tslint:disable-next-line: one-variable-per-declaration
@@ -131,16 +167,6 @@ export class AsigActividadesComponent implements OnInit {
     this.asig_avtivService.getAsig_actividadesG(this.grupo).subscribe(
       (res: any) => {
         this.asignaciones = res;
-      },
-      err => {
-        this.toastr.error(err);
-      }
-    );
-  }
-  getUsuarioGrupo() {
-    this.usuarioService.getGrupoUsuario().subscribe(
-      (res: any) => {
-        localStorage.setItem('grupo', res[0].id_grupo);
       },
       err => {
         this.toastr.error(err);

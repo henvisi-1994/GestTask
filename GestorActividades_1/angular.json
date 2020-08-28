@@ -34,6 +34,7 @@
               "node_modules/overlayscrollbars/css/OverlayScrollbars.min.css",
               "node_modules/daterangepicker/daterangepicker.css",
               "node_modules/summernote/dist/summernote-bs4.min.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": [
