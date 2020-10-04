@@ -32,5 +32,12 @@ export class ActividadesService {
   updateActividad( id_act: number, updateActividad: Actividad) {
     return this.http.put(`${this.API_URI}/updateActividad/${id_act}`, updateActividad);
   }
+// Actualiza en bd mediante  NgModel de Actividad y su id  enviado a servidor backend
+comentarActividad( id_act: number, comentario: any) {
+  return this.http.put(`${this.API_URI}/comentarActividad/${id_act}`, comentario);
+}
+deshabilitarActividad( id_act: number) {
+  return this.http.put(`${this.API_URI}/deshabilitarActividad/${id_act}`, null);
+}
 
 }

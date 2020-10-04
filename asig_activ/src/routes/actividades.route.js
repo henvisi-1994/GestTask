@@ -7,6 +7,8 @@ router.get('/actividades',actividades.getactividades);
 router.post('/createActividad',validacion.verifyToken,actividades.registro);
 router.get('/actividadesGrupo/:id_grupo',actividades.getactividadesGrupo);
 router.put('/updateActividad/:id_act',validacion.verifyToken,actividades.update);
+router.put('/comentarActividad/:id_act',validacion.verifyToken,actividades.comentar);
+router.put('/deshabilitarActividad/:id_act',validacion.verifyToken,actividades.deshabilitar);
 router.delete('/deleteActividad/:id_act',validacion.verifyToken,actividades.delete);
 
 module.exports= router;

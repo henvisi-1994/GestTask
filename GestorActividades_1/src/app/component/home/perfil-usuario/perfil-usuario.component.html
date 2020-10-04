@@ -2,19 +2,19 @@
   <h1>Perfil</h1>
   <form action="">
     <div class="form-group">
-      <label for="">Nombres</label>
+      <label for="">Nombres (*)</label>
       <input type="text" name="nombres" id="" class="form-control" placeholder="Ingrese Nombres" [(ngModel)]="usuario.nombres_user" required="true" >
     </div>
     <div class="form-group">
-      <label for="">Apellidos</label>
+      <label for="">Apellidos (*)</label>
       <input type="text" name="apellidos" id="" class="form-control" placeholder="Ingrese Apellidos" [(ngModel)]="usuario.apellidos_user" required="true">
     </div>
     <div class="form-group">
-      <label for="">Usuario GitHub</label>
+      <label for="">Usuario GitHub (*)</label>
       <input type="text" name="user_git" id="" class="form-control" placeholder="Ingrese usuario de github" [(ngModel)]="usuario.user_git_user" required="true">
     </div>
     <div class="form-group">
-      <label for="">E-mail</label>
+      <label for="">E-mail (*)</label>
       <input type="email" name="email" id="" class="form-control" placeholder="Ingrese E-mail" [(ngModel)]="usuario.email_user" required="true">
     </div>
     <div class="form-group">
@@ -22,14 +22,14 @@
       <input type="text" name="celular" id="" class="form-control" placeholder="Ingrese su numero de celular" [(ngModel)]="usuario.celular_user">
     </div>
     <div class="row form-group">
-      <label for="" class="col-form-label col-md-4">Contraseña Antigua (*)</label>
+      <label for="" class="col-form-label col-md-4">Contraseña Antigua</label>
       <div class="col-md-8">
         <input type="password" name="contrasena" id="contrasena" class="form-control"
           [(ngModel)]="usuario.contrasena_user" placeholder="Ingrese contraseña">
       </div>
     </div>
     <div class="row form-group">
-      <label for="" class="col-form-label col-md-4">Contraseña Actual (*)</label>
+      <label for="" class="col-form-label col-md-4">Contraseña Actual</label>
       <div class="col-md-8">
         <input type="password" name="contrasena" id="contrasena" class="form-control"
           [(ngModel)]="contrasena_usuario" placeholder="Ingrese contraseña">

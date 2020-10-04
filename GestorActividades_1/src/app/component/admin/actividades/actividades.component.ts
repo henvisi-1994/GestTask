@@ -21,6 +21,7 @@ export class ActividadesComponent implements OnInit {
     id_grupo: 0,
     fecha_act: new Date()
   };
+
   public grupos: any;
   constructor(public modalService: NgbModal,
               public actividadServices: ActividadesService,
@@ -78,6 +79,7 @@ export class ActividadesComponent implements OnInit {
     this.edit = true;
     this.modalService.open(this.modal);
   }
+
   public borrarActividad(id_act: number) {
     this.actividadServices.deleteActividad(id_act).subscribe(
       (res: any) => {
