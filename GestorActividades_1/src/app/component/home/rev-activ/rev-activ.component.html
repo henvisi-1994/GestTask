@@ -89,7 +89,7 @@
     <div class="card-footer">
       <form action="#" method="post">
         <div class="input-group">
-          <input type="text" name="message" placeholder="Escribe un mensaje ..." class="form-control" [(ngModel)]="userchat.message" (change)="mismensajes">
+          <input type="text" name="message" placeholder="Escribe un mensaje ..." class="form-control" [(ngModel)]="userchat.message" (change)="mismensajes()">
           <span class="input-group-append">
             <button type="button" class="btn btn-primary">Enviar</button>
           </span>

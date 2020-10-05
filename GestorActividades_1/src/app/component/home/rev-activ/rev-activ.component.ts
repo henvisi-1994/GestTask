@@ -38,8 +38,9 @@ export class RevActivComponent implements OnInit {
   ngOnInit(): void {
     this.getUsuario();
     this.username = localStorage.getItem('username');
+    this.userchat.user = this.username;
     this.webService.listen('enviar-texto').subscribe((data) => {
-        this.mensajes = data;
+         this.mensajes = data;
     });
   }
   public mismensajes() {
