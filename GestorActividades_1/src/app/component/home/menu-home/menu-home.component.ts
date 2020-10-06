@@ -11,7 +11,11 @@ import { ToastrService } from 'ngx-toastr';
 export class MenuHomeComponent implements OnInit {
   esAdmin: boolean;
   eslogeado = false;
-  usuario: any;
+  usuario = {
+    nombres_user: '',
+    apellidos_user: '',
+    tipo_user: ''
+  };
   constructor(private usuarioService: UsuariosService,
               private router: Router,
               private toastr: ToastrService) { }

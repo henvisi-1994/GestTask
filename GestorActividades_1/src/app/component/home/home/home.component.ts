@@ -8,7 +8,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  usuario: any;
+  usuario = {
+    nombres_user: '',
+    apellidos_user: '',
+    tipo_user: ''
+  };
 
   constructor(private usuarioService: UsuariosService, private toastr: ToastrService) { }
 
